@@ -1,0 +1,495 @@
+{
+  "id": "d5265ef2-320b-4a22-868c-2bbfd6b14bb8",
+  "version": "2.0",
+  "name": "assignment4",
+  "url": "https://demo.guru99.com",
+  "tests": [{
+    "id": "54d3884d-d956-481f-bd0e-deb9a52ad36c",
+    "name": "MSL4_002: Register Successfully",
+    "commands": [{
+      "id": "e85f8e9e-b4cf-4178-871b-752e570c9ed1",
+      "comment": "Open the newtours SUT",
+      "command": "open",
+      "target": "/test/newtours/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b9a54fe-9b00-47db-b234-c9afb6d4bc5c",
+      "comment": "Resize the window so that Selenium can navigate properly",
+      "command": "setWindowSize",
+      "target": "1440x875",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4f5e3d6-a4b8-4a99-b4d1-f9f53e1fcd91",
+      "comment": "Follow the REGISTER link to open the registration page",
+      "command": "click",
+      "target": "linkText=REGISTER",
+      "targets": [
+        ["linkText=REGISTER", "linkText"],
+        ["css=.mouseOver > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REGISTER')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'register.php')]", "xpath:href"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REGISTER')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "939ac815-01e1-4dbd-9be7-11a8841dc961",
+      "comment": "Enter the first name",
+      "command": "type",
+      "target": "name=firstName",
+      "targets": [
+        ["name=firstName", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='firstName']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "test_first_name_1"
+    }, {
+      "id": "49a6a5dd-62dd-412d-9b7f-7414d1552cb9",
+      "comment": "Enter the last name",
+      "command": "type",
+      "target": "name=lastName",
+      "targets": [
+        ["name=lastName", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='lastName']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": "test_last_name_1"
+    }, {
+      "id": "88f7dd64-90a0-4c6e-af71-39392c3a44c6",
+      "comment": "Enter the username",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//tr[13]/td[2]/input", "xpath:position"]
+      ],
+      "value": "username_1"
+    }, {
+      "id": "6968ae57-8a12-418e-a8c5-2374518f14f5",
+      "comment": "Enter the password",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(14) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[14]/td[2]/input", "xpath:position"]
+      ],
+      "value": "username_1"
+    }, {
+      "id": "bd22c96a-4d82-4706-9cc4-f1fbbae35fb3",
+      "comment": "Enter the password confirmation",
+      "command": "type",
+      "target": "name=confirmPassword",
+      "targets": [
+        ["name=confirmPassword", "name"],
+        ["css=tr:nth-child(15) input", "css:finder"],
+        ["xpath=//input[@name='confirmPassword']", "xpath:attributes"],
+        ["xpath=//tr[15]/td[2]/input", "xpath:position"]
+      ],
+      "value": "username_1"
+    }, {
+      "id": "b57496de-e547-441d-8097-35a1fa713645",
+      "comment": "Click the submit button to register the account",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='submit']", "xpath:attributes"],
+        ["xpath=//tr[17]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4edf6251-f501-4128-a236-00e00ea56014",
+      "comment": "Verify the first and last names are returned correctly",
+      "command": "verifyText",
+      "target": "css=p:nth-child(1) b",
+      "targets": [
+        ["css=p:nth-child(1) b", "css:finder"],
+        ["xpath=//font/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dear test_first_name_1 test_last_name_1,')]", "xpath:innerText"]
+      ],
+      "value": "Dear test_first_name_1 test_last_name_1,"
+    }, {
+      "id": "ea4a9250-2ae2-47e0-968a-4cce3205dc66",
+      "comment": "Verify the username is returned correctly",
+      "command": "verifyText",
+      "target": "css=p:nth-child(3) b",
+      "targets": [
+        ["css=p:nth-child(3) b", "css:finder"],
+        ["xpath=//p[3]/font/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Note: Your user name is username_1.')]", "xpath:innerText"]
+      ],
+      "value": "Note: Your user name is username_1."
+    }]
+  }, {
+    "id": "391cdc5c-4864-4245-980e-5e5f1cb01416",
+    "name": "MSL4_001: Sign-On Unsuccessful",
+    "commands": [{
+      "id": "593b9751-bfdc-4dfa-8f31-725ce459f8dc",
+      "comment": "Open the site under test",
+      "command": "open",
+      "target": "/test/newtours/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "efc0034c-043f-49c1-ac36-57aebf26bf59",
+      "comment": "Set the window size so that Selenium can navigate the page under test",
+      "command": "setWindowSize",
+      "target": "720x875",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "40a67fa1-a4e6-4e2d-8cb4-d02893a8d623",
+      "comment": "Open the SIGN-ON page",
+      "command": "click",
+      "target": "linkText=SIGN-ON",
+      "targets": [
+        ["linkText=SIGN-ON", "linkText"],
+        ["css=.mouseOver > a", "css:finder"],
+        ["xpath=//a[contains(text(),'SIGN-ON')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'login.php')]", "xpath:href"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SIGN-ON')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "19c6e93c-2f6a-4ad9-9aa9-2d259adaf06c",
+      "comment": "Enter the username",
+      "command": "type",
+      "target": "name=userName",
+      "targets": [
+        ["name=userName", "name"],
+        ["css=tr:nth-child(1) > td > input", "css:finder"],
+        ["xpath=//input[@name='userName']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "username_11"
+    }, {
+      "id": "8c8d0f8b-31ec-41a6-bbac-112145677e76",
+      "comment": "Enter the password",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "userpass_11"
+    }, {
+      "id": "011295c9-8f1d-4a92-b95b-5f186cb6bede",
+      "comment": "Click the submit button to execute the test",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=div > input", "css:finder"],
+        ["xpath=//input[@name='submit']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7503a970-cc4b-48f4-b4f2-73e575f4eab0",
+      "comment": "Verify that we have not logged in successfully",
+      "command": "verifyText",
+      "target": "css=span:nth-child(3)",
+      "targets": [
+        ["css=span:nth-child(3)", "css:finder"],
+        ["xpath=//td[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Enter your userName and password correct')]", "xpath:innerText"]
+      ],
+      "value": "Enter your userName and password correct"
+    }]
+  }, {
+    "id": "aee459cb-babd-47d1-9418-d135ee79e004",
+    "name": "MSL4_003: Sign-On Successful",
+    "commands": [{
+      "id": "713c937b-f2ec-4050-914d-2655afacac2f",
+      "comment": "Open the site under test",
+      "command": "open",
+      "target": "/test/newtours/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c80f4189-5432-41e1-b23c-ade690d4726d",
+      "comment": "Set the window size so that Selenium can navigate the page under test",
+      "command": "setWindowSize",
+      "target": "720x875",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "900ef7a6-6cc3-4f0f-8e08-638e0a5879d6",
+      "comment": "Open the SIGN-ON page",
+      "command": "click",
+      "target": "linkText=SIGN-ON",
+      "targets": [
+        ["linkText=SIGN-ON", "linkText"],
+        ["css=.mouseOver > a", "css:finder"],
+        ["xpath=//a[contains(text(),'SIGN-ON')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'login.php')]", "xpath:href"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SIGN-ON')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1287632-c52e-45bd-ab08-697fe1f0c47f",
+      "comment": "Enter the username",
+      "command": "type",
+      "target": "name=userName",
+      "targets": [
+        ["name=userName", "name"],
+        ["css=tr:nth-child(1) > td > input", "css:finder"],
+        ["xpath=//input[@name='userName']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "username_1"
+    }, {
+      "id": "f7d6907d-523f-46cf-8c08-fba893f28cb7",
+      "comment": "Enter the password",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "password_1"
+    }, {
+      "id": "3e79fb7b-b4b0-49f0-8bd2-340c9f5b1866",
+      "comment": "Click the submit button to execute the test",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=div > input", "css:finder"],
+        ["xpath=//input[@name='submit']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92e48a37-1fc3-4101-81d7-503adb3e098a",
+      "comment": "Verify that we have logged in successfully",
+      "command": "verifyText",
+      "target": "css=h3",
+      "targets": [
+        ["css=h3", "css:finder"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Login Successfully')]", "xpath:innerText"]
+      ],
+      "value": "Login Successfully"
+    }]
+  }, {
+    "id": "41ecd267-bc4c-47fb-920c-c56b811a42f4",
+    "name": "MSL4_005: Register Max Boundary Testing",
+    "commands": [{
+      "id": "305921c9-f926-4377-9931-04d7954c0e76",
+      "comment": "Open the newtours SUT",
+      "command": "open",
+      "target": "/test/newtours/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "caef143a-d8d3-416d-acb0-d1c15e24dcc5",
+      "comment": "Resize the window so that Selenium can navigate properly",
+      "command": "setWindowSize",
+      "target": "1440x875",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af00ae2d-2ff1-45bf-9878-c11d81c9c93a",
+      "comment": "Follow the REGISTER link to open the registration page",
+      "command": "click",
+      "target": "linkText=REGISTER",
+      "targets": [
+        ["linkText=REGISTER", "linkText"],
+        ["css=.mouseOver > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REGISTER')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'register.php')]", "xpath:href"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REGISTER')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "98a2148a-e3f8-4b5c-8d66-c48c74fd94c5",
+      "comment": "Enter a 60 character first name",
+      "command": "type",
+      "target": "name=firstName",
+      "targets": [
+        ["name=firstName", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='firstName']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "FIRSTxxx10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50xxxxxxxx60"
+    }, {
+      "id": "7eb73ac1-06e8-41f4-909d-7411f3b8c5dd",
+      "comment": "Enter a 60 character last name",
+      "command": "type",
+      "target": "name=lastName",
+      "targets": [
+        ["name=lastName", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='lastName']", "xpath:attributes"],
+        ["xpath=//tr[3]/td[2]/input", "xpath:position"]
+      ],
+      "value": "LASTxxxx10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50xxxxxxxx60"
+    }, {
+      "id": "941bbe42-8ebe-4896-9bc4-13a5f6745fe1",
+      "comment": "Enter a 60 character username",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//tr[13]/td[2]/input", "xpath:position"]
+      ],
+      "value": "USERNAME10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50xxxxxxxx60"
+    }, {
+      "id": "8f7a9358-b091-409c-b290-356017dc96d1",
+      "comment": "Enter the password",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(14) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[14]/td[2]/input", "xpath:position"]
+      ],
+      "value": "username_1"
+    }, {
+      "id": "161a08f1-96cb-41d2-8e00-07d1a9f0c257",
+      "comment": "Enter the password confirmation",
+      "command": "type",
+      "target": "name=confirmPassword",
+      "targets": [
+        ["name=confirmPassword", "name"],
+        ["css=tr:nth-child(15) input", "css:finder"],
+        ["xpath=//input[@name='confirmPassword']", "xpath:attributes"],
+        ["xpath=//tr[15]/td[2]/input", "xpath:position"]
+      ],
+      "value": "username_1"
+    }, {
+      "id": "2831d1d3-02d0-4262-b4f6-8de6b540892e",
+      "comment": "Click the submit button to register the account",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='submit']", "xpath:attributes"],
+        ["xpath=//tr[17]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fac88b94-7226-48b3-8157-5d31f418f773",
+      "comment": "Verify first name and last name are correct as entered",
+      "command": "verifyText",
+      "target": "css=p:nth-child(1) b",
+      "targets": [
+        ["css=p:nth-child(1) b", "css:finder"],
+        ["xpath=//font/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dear FIRSTxxx10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50 LASTxxxx10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50,')]", "xpath:innerText"]
+      ],
+      "value": "Dear FIRSTxxx10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50xxxxxxxx60 LASTxxxx10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50xxxxxxxx60,"
+    }, {
+      "id": "e28e6fed-ac44-43e3-b5d8-b3f00a272656",
+      "comment": "Verify username is as submitted",
+      "command": "verifyText",
+      "target": "css=p:nth-child(3) b",
+      "targets": [
+        ["css=p:nth-child(3) b", "css:finder"],
+        ["xpath=//p[3]/font/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Note: Your user name is USERNAME10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50.')]", "xpath:innerText"]
+      ],
+      "value": "Note: Your user name is USERNAME10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50xxxxxxxx60."
+    }]
+  }, {
+    "id": "806dcd94-8ba2-42f2-8427-3687f2b1a4ed",
+    "name": "MSL4_004: Register Min Boundary Testing",
+    "commands": [{
+      "id": "106f26b1-44f4-4396-b1a7-40b1e391510a",
+      "comment": "Open the newtours SUT",
+      "command": "open",
+      "target": "/test/newtours/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7c268b2f-82fc-4e62-903c-b66811573497",
+      "comment": "Resize the window so that Selenium can navigate properly",
+      "command": "setWindowSize",
+      "target": "1440x875",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2113bbf-13cc-4b06-a737-35d464898d83",
+      "comment": "Follow the REGISTER link to open the registration page",
+      "command": "click",
+      "target": "linkText=REGISTER",
+      "targets": [
+        ["linkText=REGISTER", "linkText"],
+        ["css=.mouseOver > a", "css:finder"],
+        ["xpath=//a[contains(text(),'REGISTER')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'register.php')]", "xpath:href"],
+        ["xpath=//tr[2]/td/table/tbody/tr/td[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'REGISTER')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "041b94c8-59be-4db3-81ff-8e34167af8a6",
+      "comment": "Click the submit button to register the account",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='submit']", "xpath:attributes"],
+        ["xpath=//tr[17]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97ac7823-dcb5-4181-8333-fb28ce9f444e",
+      "comment": "Verify first name and last name are correct as entered",
+      "command": "verifyText",
+      "target": "css=p:nth-child(1) b",
+      "targets": [
+        ["css=p:nth-child(1) b", "css:finder"],
+        ["xpath=//font/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dear FIRSTxxx10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50 LASTxxxx10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50,')]", "xpath:innerText"]
+      ],
+      "value": "Dear  ,"
+    }, {
+      "id": "e038abf6-154c-4b3f-aeb3-4f76c7bd3849",
+      "comment": "Verify username is as submitted",
+      "command": "verifyText",
+      "target": "css=p:nth-child(3) b",
+      "targets": [
+        ["css=p:nth-child(3) b", "css:finder"],
+        ["xpath=//p[3]/font/b", "xpath:position"],
+        ["xpath=//b[contains(.,'Note: Your user name is USERNAME10xxxxxxxx20xxxxxxxx30xxxxxxxx40xxxxxxxx50.')]", "xpath:innerText"]
+      ],
+      "value": "Note: Your user name is ."
+    }]
+  }],
+  "suites": [{
+    "id": "bfcdf48e-5aa1-4796-b8b5-8b07ac0e7e94",
+    "name": "Assignment 4",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["391cdc5c-4864-4245-980e-5e5f1cb01416", "54d3884d-d956-481f-bd0e-deb9a52ad36c", "aee459cb-babd-47d1-9418-d135ee79e004", "41ecd267-bc4c-47fb-920c-c56b811a42f4", "806dcd94-8ba2-42f2-8427-3687f2b1a4ed"]
+  }],
+  "urls": ["https://demo.guru99.com/"],
+  "plugins": []
+}
